@@ -1,0 +1,105 @@
+.hero {
+  min-height: 100vh;
+  position: relative;
+
+  background-image: url("https://images.unsplash.com/photo-1581578731548-c64695cc6952?auto=format&fit=crop&w=2000&q=85");
+  background-size: cover;
+  background-position: center;
+
+  display: flex;
+  align-items: center;
+}
+
+.hero-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.48);
+}
+
+.hero-container {
+  width: 90%;
+  max-width: 1200px;
+  margin: auto;
+
+  position: relative;
+  z-index: 2;
+}
+
+.hero-content {
+  max-width: 750px;
+  color: white;
+}
+
+.hero-label {
+  font-size: 14px;
+  letter-spacing: 3px;
+  font-weight: 700;
+  margin-bottom: 22px;
+}
+
+.hero h1 {
+  font-size: clamp(48px, 7vw, 86px);
+  line-height: 0.98;
+  font-weight: 800;
+  margin-bottom: 30px;
+}
+
+.hero h1 span {
+  display: block;
+  color: #cfe2d9;
+}
+
+.hero-description {
+  max-width: 600px;
+  font-size: 18px;
+  line-height: 1.7;
+  color: #eeeeee;
+  margin-bottom: 35px;
+}
+
+.hero-buttons {
+  display: flex;
+  gap: 15px;
+  flex-wrap: wrap;
+}
+
+.hero-btn {
+  padding: 16px 28px;
+  text-decoration: none;
+  font-weight: 700;
+  transition: 0.3s;
+}
+
+.hero-btn.primary {
+  background: #123b32;
+  color: white;
+}
+
+.hero-btn.primary:hover {
+  background: #1d5a4b;
+}
+
+.hero-btn.secondary {
+  border: 1px solid white;
+  color: white;
+}
+
+.hero-btn.secondary:hover {
+  background: white;
+  color: #123b32;
+}
+
+@media (max-width: 600px) {
+  .hero h1 {
+    font-size: 48px;
+  }
+
+  .hero-description {
+    font-size: 16px;
+  }
+
+  .hero-buttons {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}

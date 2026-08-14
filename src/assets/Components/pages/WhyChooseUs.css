@@ -1,0 +1,93 @@
+.why-section {
+  padding: 110px 0;
+  background: #f6f8f6;
+}
+
+.container {
+  width: 90%;
+  max-width: 1200px;
+  margin: auto;
+}
+
+.why-heading {
+  max-width: 650px;
+  margin-bottom: 60px;
+}
+
+.section-label {
+  color: #2f6657;
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 2px;
+  margin-bottom: 15px;
+}
+
+.section-title {
+  color: #123b32;
+  font-size: clamp(36px, 5vw, 56px);
+  line-height: 1.05;
+  margin-bottom: 20px;
+}
+
+.section-text {
+  color: #666;
+  line-height: 1.8;
+}
+
+.reasons-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+}
+
+.reason-card {
+  background: white;
+  padding: 35px 25px;
+  border: 1px solid #eeeeee;
+  transition: 0.3s;
+  border-radius: 6%;
+}
+
+.reason-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.08);
+}
+
+.reason-icon {
+  width: 60px;
+  height: 60px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #e4eee9;
+  color: #123b32;
+
+  margin-bottom: 25px;
+}
+.reason-icon::shadow {
+  box-shadow: 0 4px 6px rgba(14, 124, 65, 0.1);
+}
+
+.reason-card h3 {
+  color: #123b32;
+  font-size: 20px;
+  margin-bottom: 15px;
+}
+
+.reason-card p {
+  color: #777;
+  line-height: 1.7;
+}
+
+@media (max-width: 900px) {
+  .reasons-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 550px) {
+  .reasons-grid {
+    grid-template-columns: 1fr;
+  }
+}
