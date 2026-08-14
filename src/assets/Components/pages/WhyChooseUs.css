@@ -65,7 +65,7 @@
 
   margin-bottom: 25px;
 }
-.reason-icon::shadow {
+.reason-icon:shadow {
   box-shadow: 0 4px 6px rgba(14, 124, 65, 0.1);
 }
 
