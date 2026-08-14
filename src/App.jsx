@@ -58,7 +58,7 @@ function AnimatedRoutes() {
 
 function App() {
   return (
-    <BrowserRouter>
+    <BrowserRouter basename="/Kavod-cleaning">
       <Navbar />
 
       <AnimatedRoutes />

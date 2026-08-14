@@ -11,7 +11,7 @@ function Navbar() {
       <div className="nav-container">
         {/* Logo */}
         <Link to="/" className="logo">
-          <img src="/New-logo2.jpg" alt="Kavod Cleaning Logo" />
+          <img src="/Kavod-cleaning/New-logo2.jpg" alt="Kavod Cleaning Logo" />
         </Link>
 
         <div className={`nav-links ${menuOpen ? "active" : ""}`}>
