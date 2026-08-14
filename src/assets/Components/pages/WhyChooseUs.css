@@ -65,9 +65,6 @@
 
   margin-bottom: 25px;
 }
-.reason-icon:shadow {
-  box-shadow: 0 4px 6px rgba(14, 124, 65, 0.1);
-}
 
 .reason-card h3 {
   color: #123b32;
