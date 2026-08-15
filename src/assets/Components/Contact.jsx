@@ -12,7 +12,7 @@ function Contact() {
         <div className="contact-container">
           {/* Left Side */}
           <div className="contact-info">
-            <p className="section-label">CONTACT KAVOD</p>
+            <p className="section-label">CONTACT KAVONERA</p>
 
             <h2>
               We're here to
@@ -32,7 +32,7 @@ function Contact() {
 
                 <div>
                   <h3>Call Us</h3>
-                  <p>+234 XXX XXX XXXX</p>
+                  <p>07463053148</p>
                 </div>
               </div>
 
@@ -43,7 +43,7 @@ function Contact() {
 
                 <div>
                   <h3>Email Us</h3>
-                  <p>info@kavodcleaning.com</p>
+                  <p>info@kavonera.com</p>
                 </div>
               </div>
 
@@ -54,7 +54,7 @@ function Contact() {
 
                 <div>
                   <h3>Our Location</h3>
-                  <p>Abuja, Nigeria</p>
+                  <p>United Kingdom</p>
                 </div>
               </div>
 
