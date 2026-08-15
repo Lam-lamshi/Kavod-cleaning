@@ -81,6 +81,7 @@
   border: 1px solid #e8e8e8;
   background: white;
   transition: 0.3s;
+  border-radius: 6%;
 }
 
 .blog-card:hover {
@@ -186,4 +187,248 @@
   height: 100%;
   object-fit: cover;
   display: block;
+}
+/* =========================================
+   ARTICLE POPUP
+========================================= */
+
+.article-overlay {
+  position: fixed;
+  inset: 0;
+
+  z-index: 9999;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: 30px;
+
+  background: rgba(0, 0, 0, 0.65);
+
+  backdrop-filter: blur(5px);
+
+  animation: articleOverlayIn 0.3s ease;
+}
+
+/* Article Card */
+
+.article-card {
+  position: relative;
+
+  width: 100%;
+  max-width: 900px;
+
+  max-height: 90vh;
+
+  overflow-y: auto;
+
+  background: white;
+
+  box-shadow: 0 30px 80px rgba(0, 0, 0, 0.25);
+
+  animation: articleCardIn 0.45s ease;
+
+  scrollbar-width: thin;
+}
+
+/* Article Image */
+
+.article-image {
+  width: 100%;
+
+  height: 330px;
+
+  object-fit: cover;
+
+  display: block;
+}
+
+/* Article Content */
+
+.article-content {
+  padding: 45px 50px 50px;
+}
+
+.article-content .blog-meta {
+  margin-bottom: 15px;
+}
+
+.article-content h2 {
+  color: #123b32;
+
+  font-size: clamp(30px, 5vw, 48px);
+
+  line-height: 1.1;
+
+  margin-bottom: 25px;
+}
+
+/* Article Text */
+
+.article-text {
+  max-width: 750px;
+}
+
+.article-text p {
+  color: #606060;
+
+  font-size: 16px;
+
+  line-height: 1.9;
+
+  margin-bottom: 20px;
+}
+
+/* Close Button */
+
+.article-close {
+  position: absolute;
+
+  top: 18px;
+  right: 18px;
+
+  z-index: 5;
+
+  width: 45px;
+  height: 45px;
+
+  border: none;
+
+  border-radius: 50%;
+
+  background: white;
+
+  color: #123b32;
+
+  font-size: 30px;
+
+  line-height: 1;
+
+  cursor: pointer;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.15);
+
+  transition: 0.3s ease;
+}
+
+.article-close:hover {
+  background: #123b32;
+
+  color: white;
+
+  transform: rotate(90deg);
+}
+
+/* Quote Button */
+
+.article-quote-btn {
+  display: inline-flex;
+
+  align-items: center;
+
+  gap: 10px;
+
+  margin-top: 20px;
+
+  padding: 15px 22px;
+
+  background: #123b32;
+
+  color: white;
+
+  text-decoration: none;
+
+  font-weight: 700;
+
+  transition: 0.3s ease;
+}
+
+.article-quote-btn:hover {
+  background: #2f6657;
+
+  transform: translateY(-3px);
+}
+
+/* =========================================
+   POPUP ANIMATIONS
+========================================= */
+
+@keyframes articleOverlayIn {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes articleCardIn {
+  from {
+    opacity: 0;
+
+    transform: translateY(40px) scale(0.97);
+  }
+
+  to {
+    opacity: 1;
+
+    transform: translateY(0) scale(1);
+  }
+}
+
+/* =========================================
+   MOBILE
+========================================= */
+
+@media (max-width: 600px) {
+  .article-overlay {
+    padding: 15px;
+  }
+
+  .article-card {
+    max-height: 92vh;
+  }
+
+  .article-image {
+    height: 220px;
+  }
+
+  .article-content {
+    padding: 30px 25px 35px;
+  }
+
+  .article-content h2 {
+    font-size: 30px;
+  }
+
+  .article-text p {
+    font-size: 15px;
+
+    line-height: 1.8;
+  }
+
+  .article-close {
+    width: 40px;
+    height: 40px;
+
+    top: 12px;
+    right: 12px;
+
+    font-size: 26px;
+  }
+
+  .article-quote-btn {
+    width: 100%;
+
+    justify-content: center;
+
+    text-align: center;
+  }
 }

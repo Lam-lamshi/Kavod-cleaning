@@ -15,7 +15,7 @@ function Footer() {
           {/* Brand */}
           <div className="footer-brand">
             <a href="/" className="footer-logo">
-              KAVOD
+              KAVONERA
             </a>
 
             <p>
@@ -77,12 +77,14 @@ function Footer() {
 
             <a href="tel:+2340000000000">+234 XXX XXX XXXX</a>
 
-            <a href="mailto:info@kavodcleaning.com">info@kavodcleaning.com</a>
+            <a href="mailto:info@kavoneracleaning.com">
+              info@kavoneracleaning.com
+            </a>
 
-            <a href="/contact" className="footer-quote">
+            <Link to="/quote" className="footer-quote">
               Get a Free Quote
               <ArrowUpRight size={16} />
-            </a>
+            </Link>
           </div>
         </div>
       </div>
@@ -90,7 +92,9 @@ function Footer() {
       {/* Bottom Footer */}
       <div className="footer-bottom">
         <div className="footer-bottom-container">
-          <p>© {currentYear} KAVOD Cleaning Services. All rights reserved.</p>
+          <p>
+            © {currentYear} KAVONERA Cleaning Services. All rights reserved.
+          </p>
 
           <div className="footer-bottom-links">
             <a href="#">Privacy Policy</a>

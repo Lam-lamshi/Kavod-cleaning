@@ -1,11 +1,11 @@
 import { Link } from "react-router-dom";
+import Aos from "aos";
 import {
   Home,
   Building2,
   Sparkles,
   Truck,
   Hammer,
-  Sofa,
   ArrowUpRight,
   CheckCircle2,
   X,
@@ -41,7 +41,7 @@ const services = [
     shortDescription:
       "Professional cleaning solutions that keep your workplace clean, organized and presentable.",
     description:
-      "A clean workplace creates a better environment for employees, customers and visitors. KAVOD provides reliable commercial cleaning solutions for offices, businesses and professional spaces.",
+      "A clean workplace creates a better environment for employees, customers and visitors. KAVONERA provides reliable commercial cleaning solutions for offices, businesses and professional spaces.",
     image:
       "https://images.unsplash.com/photo-1497366754035-f200968a6e72?auto=format&fit=crop&w=1200&q=85",
     included: [
@@ -110,25 +110,6 @@ const services = [
       "Final space preparation",
     ],
   },
-  {
-    icon: Sofa,
-    number: "06",
-    title: "Special Cleaning",
-    shortDescription:
-      "Flexible cleaning solutions created around the specific needs of your space.",
-    description:
-      "Every space is different. Our special cleaning service gives you the flexibility to request cleaning based on your specific requirements, whether it is a particular room, surface or situation.",
-    image:
-      "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?auto=format&fit=crop&w=1200&q=85",
-    included: [
-      "Customized cleaning plans",
-      "Specific room cleaning",
-      "Furniture and surface cleaning",
-      "Detailed spot cleaning",
-      "Special requests",
-      "Flexible service options",
-    ],
-  },
 ];
 
 function Services() {
@@ -140,9 +121,14 @@ function Services() {
         <div className="container">
           <div className="services-header">
             <div>
-              <p className="section-label">WHAT WE DO</p>
+              <p className="section-label" data-aos="fade-right">
+                WHAT WE DO
+              </p>
 
-              <h2 className="section-title">
+              <h2
+                className="section-title"
+                data-aos="fade-right"
+                data-delay="100">
                 Cleaning services
                 <br />
                 <span>made for you.</span>
@@ -150,14 +136,14 @@ function Services() {
             </div>
 
             <div className="services-intro">
-              <p>
-                From everyday cleaning to detailed deep cleaning, KAVOD provides
-                professional solutions designed around your space.
+              <p data-aos="fade-right" data-delay="200">
+                From everyday cleaning to detailed deep cleaning, KAVONERA
+                provides professional solutions designed around your space.
               </p>
 
-              <a href="#quote" className="services-cta">
+              <Link to="/quote" className="services-cta">
                 Get a free quote <ArrowUpRight size={18} />
-              </a>
+              </Link>
             </div>
           </div>
 
@@ -166,7 +152,12 @@ function Services() {
               const Icon = service.icon;
 
               return (
-                <article className="service-card" key={service.number}>
+                <article
+                  className="service-card"
+                  key={service.number}
+                  data-aos="fade-up"
+                  data-aos-duration="800"
+                  data-aos-delay={service.number * 100}>
                   <div
                     className="service-image"
                     style={{
@@ -238,7 +229,7 @@ function Services() {
             </div>
 
             <div className="modal-content">
-              <p className="modal-label">KAVOD CLEANING SERVICES</p>
+              <p className="modal-label">KAVONERA CLEANING SERVICES</p>
 
               <h3>Professional cleaning, done right.</h3>
 

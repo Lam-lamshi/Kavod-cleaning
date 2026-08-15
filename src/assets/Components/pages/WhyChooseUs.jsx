@@ -30,7 +30,7 @@ function WhyChooseUs() {
     <section className="why-section">
       <div className="container">
         <div className="why-heading">
-          <p className="section-label">WHY KAVOD</p>
+          <p className="section-label">WHY KAVONERA</p>
 
           <h2 className="section-title">
             Cleaning you can

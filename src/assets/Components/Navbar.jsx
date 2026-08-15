@@ -11,7 +11,10 @@ function Navbar() {
       <div className="nav-container">
         {/* Logo */}
         <Link to="/" className="logo">
-          <img src="/Kavod-cleaning/New-logo2.jpg" alt="Kavod Cleaning Logo" />
+          <img
+            src="/Kavod-cleaning/New-nav-Logo.jpg"
+            alt="Kavonera Cleaning Logo"
+          />
         </Link>
 
         <div className={`nav-links ${menuOpen ? "active" : ""}`}>
@@ -36,7 +39,7 @@ function Navbar() {
           </Link>
 
           <Link
-            to="/contact"
+            to="/quote"
             className="nav-button"
             onClick={() => setMenuOpen(false)}>
             Get a Quote

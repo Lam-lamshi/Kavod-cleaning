@@ -13,7 +13,7 @@ function About() {
         </div>
 
         <div className="about-content">
-          <p className="section-label">ABOUT KAVOD</p>
+          <p className="section-label">ABOUT KAVONERA</p>
 
           <h2 className="section-title">
             More than cleaning.
@@ -22,7 +22,7 @@ function About() {
           </h2>
 
           <p className="section-text">
-            At KAVOD Cleaning Services, we believe that a clean environment
+            At KAVONERA Cleaning Services, we believe that a clean environment
             creates a better experience.
           </p>
 

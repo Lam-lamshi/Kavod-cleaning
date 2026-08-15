@@ -73,6 +73,7 @@
 .hero-btn.primary {
   background: #123b32;
   color: white;
+  border-radius: 7% 7% 15% 15%;
 }
 
 .hero-btn.primary:hover {
@@ -82,6 +83,7 @@
 .hero-btn.secondary {
   border: 1px solid white;
   color: white;
+  border-radius: 7%;
 }
 
 .hero-btn.secondary:hover {
