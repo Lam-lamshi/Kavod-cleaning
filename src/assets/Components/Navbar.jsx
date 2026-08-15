@@ -13,7 +13,7 @@ function Navbar() {
         <Link to="/" className="logo">
           <img
             src="/Kavod-cleaning/New-nav-Logo.jpg"
-            alt="Kavonera Cleaning Logo"
+            alt="Kavenora Cleaning Logo"
           />
         </Link>
 
