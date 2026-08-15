@@ -12,7 +12,7 @@ function Navbar() {
         {/* Logo */}
         <Link to="/" className="logo">
           <img
-            src="/Kavod-cleaning/New-nav-Logo.jpg"
+            src="/Kavod-cleaning/Newer-logo.jpg"
             alt="Kavenora Cleaning Logo"
           />
         </Link>
