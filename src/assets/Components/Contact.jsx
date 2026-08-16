@@ -68,7 +68,7 @@ function Contact() {
 
                 <div>
                   <h3>Email Us</h3>
-                  <p>info@kavenoracleaningservices.com</p>
+                  <p>Kavenoracleaningservices@gmail.com</p>
                 </div>
               </div>
 
