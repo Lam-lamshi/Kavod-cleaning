@@ -57,7 +57,7 @@ function Contact() {
 
                 <div>
                   <h3>Call Us</h3>
-                  <p>07463053148</p>
+                  <p>+44 7463 053148</p>
                 </div>
               </div>
 
