@@ -13,6 +13,7 @@
 .about-image {
   height: 600px;
   overflow: hidden;
+  border-radius: 6%;
 }
 
 .about-image img {
