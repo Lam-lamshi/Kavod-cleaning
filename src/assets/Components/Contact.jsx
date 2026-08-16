@@ -1,18 +1,43 @@
+import { useState } from "react";
 import { Phone, Mail, MapPin, Clock, Send } from "lucide-react";
 
 import "./Contact.css";
 
 function Contact() {
+  const [result, setResult] = useState("");
+
+  const onSubmit = async (event) => {
+    event.preventDefault();
+
+    setResult("Sending...");
+
+    const formData = new FormData(event.target);
+
+    formData.append("access_key", import.meta.env.VITE_WEB3FORMS_KEY);
+
+    const response = await fetch("https://api.web3forms.com/submit", {
+      method: "POST",
+      body: formData,
+    });
+
+    const data = await response.json();
+
+    if (data.success) {
+      setResult("Your request has been sent successfully!");
+      event.target.reset();
+    } else {
+      setResult(data.message || "Something went wrong. Please try again.");
+    }
+  };
+
   return (
     <main className="contact-page">
-      {/* Contact Hero */}
-
       {/* Contact Content */}
       <section className="contact-section">
         <div className="contact-container">
           {/* Left Side */}
           <div className="contact-info">
-            <p className="section-label">CONTACT KAVONERA</p>
+            <p className="section-label">CONTACT KAVENORA</p>
 
             <h2>
               We're here to
@@ -43,7 +68,7 @@ function Contact() {
 
                 <div>
                   <h3>Email Us</h3>
-                  <p>info@kavonera.com</p>
+                  <p>info@kavenoracleaningservices.com</p>
                 </div>
               </div>
 
@@ -85,7 +110,7 @@ function Contact() {
               <p>Fill out the form below and our team will get back to you.</p>
             </div>
 
-            <form className="contact-form">
+            <form className="contact-form" onSubmit={onSubmit}>
               <div className="form-row">
                 <div className="form-group">
                   <label htmlFor="name">Full Name</label>
@@ -93,6 +118,7 @@ function Contact() {
                   <input
                     type="text"
                     id="name"
+                    name="name"
                     placeholder="Your name"
                     required
                   />
@@ -101,7 +127,13 @@ function Contact() {
                 <div className="form-group">
                   <label htmlFor="phone">Phone Number</label>
 
-                  <input type="tel" id="phone" placeholder="+234..." required />
+                  <input
+                    type="tel"
+                    id="phone"
+                    name="phone"
+                    placeholder="+44..."
+                    required
+                  />
                 </div>
               </div>
 
@@ -111,6 +143,7 @@ function Contact() {
                 <input
                   type="email"
                   id="email"
+                  name="email"
                   placeholder="you@example.com"
                   required
                 />
@@ -119,22 +152,24 @@ function Contact() {
               <div className="form-group">
                 <label htmlFor="service">Service</label>
 
-                <select id="service" required>
+                <select id="service" name="service" required>
                   <option value="">Select a service</option>
 
-                  <option value="residential">Residential Cleaning</option>
-
-                  <option value="commercial">Commercial Cleaning</option>
-
-                  <option value="deep">Deep Cleaning</option>
-
-                  <option value="move">Move In / Move Out</option>
-
-                  <option value="construction">
-                    Post-Construction Cleaning
+                  <option value="Residential Cleaning">
+                    Residential Cleaning
                   </option>
 
-                  <option value="special">Special Cleaning</option>
+                  <option value="Commercial Cleaning">
+                    Commercial Cleaning
+                  </option>
+
+                  <option value="Deep Cleaning">Deep Cleaning</option>
+
+                  <option value="Move In / Move Out">Move In / Move Out</option>
+
+                  <option value="Post-Construction Cleaning">
+                    Post-Construction Cleaning
+                  </option>
                 </select>
               </div>
 
@@ -143,6 +178,7 @@ function Contact() {
 
                 <textarea
                   id="message"
+                  name="message"
                   rows="5"
                   placeholder="Tell us about the cleaning service you need..."
                   required></textarea>
@@ -152,6 +188,9 @@ function Contact() {
                 Send Request
                 <Send size={18} />
               </button>
+
+              {/* Submission status */}
+              {result && <p className="form-result">{result}</p>}
             </form>
           </div>
         </div>

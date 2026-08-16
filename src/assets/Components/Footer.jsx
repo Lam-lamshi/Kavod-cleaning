@@ -15,7 +15,7 @@ function Footer() {
           {/* Brand */}
           <div className="footer-brand">
             <a href="/" className="footer-logo">
-              KAVONERA
+              KAVENORA
             </a>
 
             <p>
@@ -25,20 +25,36 @@ function Footer() {
 
             {/* Social Media */}
             <div className="footer-socials">
-              <a href="#" aria-label="Facebook">
-                <i className="fa-brands fa-facebook-f"></i>
+              <a
+                href="https://www.facebook.com/share/1c2JLR4FvG/?mibextid=wwXIfr"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Kavenora on facebook">
+                <i className="fa-brands fa-facebook fa-bounce"></i>
               </a>
 
-              <a href="#" aria-label="Instagram">
-                <i className="fa-brands fa-instagram"></i>
+              <a
+                href="https://www.instagram.com/kavenora_cleaning_services"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Kavenora on Instagram">
+                <i className="fa-brands fa-instagram fa-bounce"></i>
               </a>
 
-              <a href="#" aria-label="Twitter">
-                <i className="fa-brands fa-x-twitter"></i>
+              <a
+                href="https://x.com/kavenora_cleaning"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Kavenora on X">
+                <i className="fa-brands fa-x-twitter  fa-bounce"></i>
               </a>
 
-              <a href="#" aria-label="LinkedIn">
-                <i className="fa-brands fa-linkedin-in"></i>
+              <a
+                href="https://www.tiktok.com/@kavenoracleaningservices"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Kavenora on TikTok">
+                <i className="fa-brands fa-tiktok fa-bounce"></i>
               </a>
             </div>
           </div>
@@ -73,12 +89,12 @@ function Footer() {
           <div className="footer-column footer-contact">
             <h3>Get In Touch</h3>
 
-            <p>Abuja, Nigeria</p>
+            <p>United Kingdom</p>
 
-            <a href="tel:+2340000000000">+234 XXX XXX XXXX</a>
+            <a href="tel:+447463053148">+44 7463 053148</a>
 
-            <a href="mailto:info@kavoneracleaning.com">
-              info@kavoneracleaning.com
+            <a href="mailto:info@kavenoracleaningservices.com">
+              info@kavenoracleaningservices.com
             </a>
 
             <Link to="/quote" className="footer-quote">
@@ -93,13 +109,13 @@ function Footer() {
       <div className="footer-bottom">
         <div className="footer-bottom-container">
           <p>
-            © {currentYear} KAVONERA Cleaning Services. All rights reserved.
+            © {currentYear} KAVENORA Cleaning Services. All rights reserved.
           </p>
 
           <div className="footer-bottom-links">
-            <a href="#">Privacy Policy</a>
+            <Link to="/privacy-policy">Privacy Policy</Link>
 
-            <a href="#">Terms & Conditions</a>
+            <Link to="/terms">Terms & Conditions</Link>
           </div>
         </div>
       </div>

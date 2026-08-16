@@ -15,6 +15,8 @@ import Services from "./assets/Components/Services";
 import Blog from "./assets/Components/Blog";
 import Contact from "./assets/Components/Contact";
 import Quotes from "./assets/Components/Quotes";
+import Terms from "./assets/Components/Terms";
+import Privacy from "./assets/Components/Privacy";
 
 import "./App.css";
 
@@ -81,6 +83,10 @@ function AnimatedRoutes() {
         <Route path="/contact" element={<Contact />} />
 
         <Route path="/quote" element={<Quotes />} />
+
+        <Route path="/terms" element={<Terms />} />
+
+        <Route path="/privacy-policy" element={<Privacy />} />
       </Routes>
     </div>
   );

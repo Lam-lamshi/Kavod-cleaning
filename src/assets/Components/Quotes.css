@@ -345,3 +345,17 @@
     font-size: 28px;
   }
 }
+.quote-result {
+  margin-top: 18px;
+  padding: 14px 18px;
+  background: #e7f0eb;
+  color: #123b32;
+  border-left: 4px solid #123b32;
+  font-weight: 600;
+  line-height: 1.5;
+}
+
+.quote-submit:disabled {
+  opacity: 0.7;
+  cursor: not-allowed;
+}

@@ -1,13 +1,54 @@
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { ArrowUpRight, CheckCircle2 } from "lucide-react";
 import AOS from "aos";
 
 import "./Quotes.css";
 
 function Quote() {
+  const [result, setResult] = useState("");
+
   useEffect(() => {
     AOS.refresh();
   }, []);
+
+  const onSubmit = async (event) => {
+    event.preventDefault();
+
+    setResult("Sending your quote request...");
+
+    const formData = new FormData(event.target);
+
+    formData.append("access_key", import.meta.env.VITE_WEB3FORMS_KEY);
+
+    // Optional: customize the email subject
+    formData.append("subject", "New Free Quote Request - Kavenora Cleaning");
+
+    // Optional: identify where the submission came from
+    formData.append("from_name", "Kavenora Cleaning Website");
+
+    try {
+      const response = await fetch("https://api.web3forms.com/submit", {
+        method: "POST",
+        body: formData,
+      });
+
+      const data = await response.json();
+
+      if (data.success) {
+        setResult(
+          "Your quote request has been sent successfully! We'll get back to you soon.",
+        );
+
+        event.target.reset();
+      } else {
+        setResult(data.message || "Something went wrong. Please try again.");
+      }
+    } catch (error) {
+      setResult(
+        "Unable to send your request. Please check your internet connection and try again.",
+      );
+    }
+  };
 
   return (
     <main className="quote-page">
@@ -61,13 +102,14 @@ function Quote() {
               </h2>
             </div>
 
-            <form className="quote-form">
+            <form className="quote-form" onSubmit={onSubmit}>
               <div className="quote-form-row">
                 <div className="quote-field">
                   <label htmlFor="name">Full Name</label>
 
                   <input
                     id="name"
+                    name="name"
                     type="text"
                     placeholder="Your full name"
                     required
@@ -79,6 +121,7 @@ function Quote() {
 
                   <input
                     id="phone"
+                    name="phone"
                     type="tel"
                     placeholder="Your phone number"
                     required
@@ -91,6 +134,7 @@ function Quote() {
 
                 <input
                   id="email"
+                  name="email"
                   type="email"
                   placeholder="you@example.com"
                   required
@@ -101,36 +145,42 @@ function Quote() {
                 <div className="quote-field">
                   <label htmlFor="service">Service Required</label>
 
-                  <select id="service" required>
+                  <select id="service" name="service" required>
                     <option value="">Select a service</option>
 
-                    <option value="residential">Residential Cleaning</option>
+                    <option value="Residential Cleaning">
+                      Residential Cleaning
+                    </option>
 
-                    <option value="commercial">Commercial Cleaning</option>
+                    <option value="Commercial Cleaning">
+                      Commercial Cleaning
+                    </option>
 
-                    <option value="deep-cleaning">Deep Cleaning</option>
+                    <option value="Deep Cleaning">Deep Cleaning</option>
 
-                    <option value="move-in-out">Move In / Move Out</option>
+                    <option value="Move In / Move Out">
+                      Move In / Move Out
+                    </option>
 
-                    <option value="post-construction">Post Construction</option>
+                    <option value="Post Construction">Post Construction</option>
                   </select>
                 </div>
 
                 <div className="quote-field">
                   <label htmlFor="property">Property Type</label>
 
-                  <select id="property" required>
+                  <select id="property" name="property" required>
                     <option value="">Select property</option>
 
-                    <option value="house">House</option>
+                    <option value="House">House</option>
 
-                    <option value="apartment">Apartment</option>
+                    <option value="Apartment">Apartment</option>
 
-                    <option value="office">Office</option>
+                    <option value="Office">Office</option>
 
-                    <option value="commercial">Commercial Space</option>
+                    <option value="Commercial Space">Commercial Space</option>
 
-                    <option value="other">Other</option>
+                    <option value="Other">Other</option>
                   </select>
                 </div>
               </div>
@@ -141,6 +191,7 @@ function Quote() {
 
                   <input
                     id="location"
+                    name="location"
                     type="text"
                     placeholder="Area / City"
                     required
@@ -150,7 +201,7 @@ function Quote() {
                 <div className="quote-field">
                   <label htmlFor="date">Preferred Date</label>
 
-                  <input id="date" type="date" />
+                  <input id="date" name="preferred_date" type="date" />
                 </div>
               </div>
 
@@ -161,15 +212,24 @@ function Quote() {
 
                 <textarea
                   id="message"
+                  name="message"
                   rows="5"
                   placeholder="Tell us about the property, size, rooms, or anything else we should know..."
                 />
               </div>
 
-              <button type="submit" className="quote-submit">
-                Request My Free Quote
+              <button
+                type="submit"
+                className="quote-submit"
+                disabled={result.startsWith("Sending")}>
+                {result.startsWith("Sending")
+                  ? "Sending..."
+                  : "Request My Free Quote"}
+
                 <ArrowUpRight size={19} />
               </button>
+
+              {result && <p className="quote-result">{result}</p>}
 
               <p className="quote-note">
                 Your information is only used to respond to your cleaning
